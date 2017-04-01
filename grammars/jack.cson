@@ -1,0 +1,64 @@
+'fileTypes': [
+  'jack'
+]
+'name': 'Jack'
+'patterns': [
+  {
+    'match': '\\b(int|char|boolean|void)\\b'
+    'name': 'storage.modifier.jack'
+  }
+  {
+    'match': '\\b(constructor|function|method|class)\\b'
+    'name': 'keyword.control.jack'
+  }
+  {
+    'match': '\\b(let|if|else|while|do|return|var|field|static)\\b'
+    'name': 'keyword.control.jack'
+  }
+  {
+    'match': '\\b[0-9]+\\b'
+    'name': 'constant.numeric.jack'
+  }
+  {
+    'match': '\\b(true|false|null|this)\\b'
+    'name': 'constant.language.jack'
+  }
+  {
+    'begin': '/\\*'
+    'captures':
+      '0':
+        'name': 'punctuation.definition.comment.jack'
+    'end': '\\*/'
+    'name': 'comment.block.jack'
+  }
+  {
+    'begin': '"'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.string.begin.jack'
+    'end': '"'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.string.end.jack'
+    'name': 'string.quoted.double.jack'
+    'patterns': [
+      {
+        'match': '\\\\.'
+        'name': 'constant.character.escape.jack'
+      }
+      {
+        'match': '""'
+        'name': 'constant.character.escape.quote.jack'
+      }
+    ]
+  }
+  {
+    'begin': '//'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.comment.jack'
+    'end': '\\n'
+    'name': 'comment.line.double-slash.jack'
+  }
+]
+'scopeName': 'source.jack'
